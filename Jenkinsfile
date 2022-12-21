@@ -1,9 +1,9 @@
 //scripted pipeline approach
-node {
-		echo "Build"
+//node {
+/*		echo "Build"
 		echo "Test"
 		echo "Integration Test"
-}
+}*/
 
 //Declarative Pipeline approach
 pipeline {
@@ -13,16 +13,16 @@ pipeline {
 			steps {
 				echo "Build"
 			}
-			stage('Test') {
+		}
+		stage('Test') {
 			steps {
 				echo "Test"
 			}
-			stage('Integration Test') {
+		}
+		stage('Integration Test') {
 			steps {
 				echo "Integration Test"
 			}
 		}
-
 	}
-
 }
