@@ -7,11 +7,13 @@
 
 //Declarative Pipeline approach
 pipeline {
-	agent { docker {image 'maven:3.6.3'} }
+	//agent { docker {image 'maven:3.6.3'} }
+	agent { docker {image 'node:alpine3.16'}}
 	stages {
 		stage('Build') {
 			steps {
-				sh 'mvn --version'
+				//sh 'mvn --version'
+				sh 'node --version'
 				echo "Build"
 			}
 		}
@@ -37,7 +39,7 @@ pipeline {
 			echo 'I run when you fail'
 		}
 		changed {
-			echi 'Istatus changed'
+			echo 'status changed'
 		}
 	}
 }
