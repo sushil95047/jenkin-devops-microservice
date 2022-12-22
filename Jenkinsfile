@@ -40,7 +40,7 @@ pipeline {
 				sh "mvn test"
 			}
 		}
-		
+
 		stage('Integration Test') {
 			steps {
 				sh "mvn failsafe:integration-test failsafe:verify"
@@ -57,7 +57,7 @@ pipeline {
 			steps {
 				//"docker build -t in28min/currency-exchange-devops:$env.BUILD_TAG"
 				script {
-					dockerImage = docker.build("docker build -t in28min/currency-exchange-devops:${env.BUILD_TAG}")
+					dockerImage = docker.build("docker build -t sushil95047/currency-exchange-devops:${env.BUILD_TAG}")
 				}
 			}
 		}
